@@ -2,8 +2,8 @@ require './person'
 
 # create student class inheret from person class
 class Student < Person
-  def initialize(classroom)
-    super(28, 'Shah Zaman')
+  def initialize(id, classroom, age, name = 'Unknown', parent_permission: true)
+    super(id, age, name, parent_permission)
     @classroom = classroom
   end
 
