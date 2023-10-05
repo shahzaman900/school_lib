@@ -1,17 +1,13 @@
-# School library System
 
 # 📗 Table of Contents
 
 - [📖 About the Project](#about-project)
   - [🛠 Built With](#built-with)
-    - [Tech Stack](#tech-stack)
 - [💻 Getting Started](#getting-started)
-  - [Setup](#setup)
   - [Prerequisites](#prerequisites)
-  - [Install](#install)
-  - [Usage](#usage)
-  - [Deployment](#triangular_flag_on_post-deployment)
+  - [Installation](#installation)
 - [👥 Authors](#authors)
+- [🔭 Future Features](#future-features)
 - [🤝 Contributing](#contributing)
 - [⭐️ Show your support](#support)
 - [🙏 Acknowledgements](#acknowledgements)
@@ -20,89 +16,97 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 School library System <a name="about-project"></a>
+# 📖 School library <a name="about-project"></a>
+
+**School library** management system is a comprehensive software project designed to streamline the management of students, teachers, and administrative tasks within an educational institution. This multi-phase project consists of seven key components, each aimed at enhancing functionality, maintainability, and usability.
 
 ## 🛠 Built With <a name="built-with"></a>
 
-### Tech Stack <a name="tech-stack"></a>
+### Tech Stack
+
+This project is built using the following technologies:
 
 <details>
-<summary>ruby</summary>
+<summary>Programming Languages</summary>
   <ul>
-    <li><a href="https://www.ruby-lang.org/en/">Ruby</a></li>
+    <li>Ruby</li>
+  </ul>
+</details>
+
+### Key Features <a name="key-features"></a>
+
+<details>
+  <ul>
+    <li>Creation and management of student and teacher profiles.</li>
+    <li>Authentication and authorization to restrict access to authorized users.</li>
   </ul>
 </details>
 
 
 <!-- GETTING STARTED -->
 
-## 💻 Getting Started <a name="getting-started"></a>
+## Getting Started <a name="getting-started"></a>
 
-To get a local copy up and running, follow these steps.
+To get started with the School library, follow the steps below:
 
 ### Prerequisites
 
 Before running this project, make sure you have the following prerequisites installed:
 
-<ul>
-  <li>ruby</li>
-  <li>Node.js</li>
-</ul>
+- Ruby
 
-### Setup
+### Installation <a name="installation"></a>
 
 1. Clone this repository to your desired folder:
 
    ```sh
    git clone https://github.com/sheezu900/school_lib.git
-   ```
 
 2. Navigate to the project directory:
 
     ```sh
     cd school_lib
-    ```
+3. Run the program:
+    ```sh
+    ruby school_lib.rb
 
-### Usage
+<!-- AUTHORS -->
 
-To run the project:
+## 👥 Authors <a name="authors"></a>
+👤 Shah Zaman
 
-```sh
-  npm start
-```
+GitHub: @sheezu900<br>
 
-## 👥 Author <a name="authors"></a>
+## 🔭 Future Features <a name="future-features"></a>
 
-👤 **Shah Zaman**
-
-- GitHub: [@githubhandle](https://github.com/sheezu900)
-- LinkedIn: [LinkedIn](https://www.linkedin.com/in/shahzaman900/)
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<details>
+<summary>In near future I am planning to implement parent portal</summary>
+  <ul>
+    <li>Mobile app for parents to access real-time information about their child's performance, attendance, and school activities.</li>
+    <li>Allow parents to communicate with teachers and administrators, schedule parent-teacher conferences, and receive notifications about important events or announcements.</li>
+    <li>Provide a secure and convenient way for parents to stay actively involved in their child's education.</li>
+  </ul>
+</details>
 
 <!-- CONTRIBUTING -->
-
 ## 🤝 Contributing <a name="contributing"></a>
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/sheezu900/school_lib/issues).
+Feel free to check the issues page.
+[issues page](https://github.com/sheezu900/school_lib/issues).
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+## ⭐️ Show your support <a name="support"></a>
+<br>
+If you find this project useful, please consider giving it a star!
+
+[![Star](https://img.shields.io/github/stars/sheezu900/school_library?style=social)](https://github.com/sheezu900/school_lib)
+
 
 <!-- ACKNOWLEDGEMENTS -->
-
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
-
-I would like to extend my heartfelt gratitude to Microverse for providing me with the opportunity to undertake this project. Additionally, I am immensely thankful to the code reviewers who takes the time to assess my work and provide valuable feedback, which greatly contributed to the refinement and success of the project. Your guidance and support have been invaluable throughout this endeavor, and I am truly grateful for your contributions.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
+We would like to express our gratitude to the contributors and anyone who uses or supports this project.
 
 <!-- LICENSE -->
-
 ## 📝 License <a name="license"></a>
-
 This project is [MIT](./LICENSE) licensed.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
