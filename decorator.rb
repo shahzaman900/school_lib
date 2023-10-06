@@ -1,6 +1,4 @@
-# frozen_string_literal: true
-
-require_relative './nameable'
+require_relative './nameable.rb'
 
 # create Decorator class
 class Decorator < Nameable

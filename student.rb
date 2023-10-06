@@ -1,6 +1,4 @@
-# frozen_string_literal: true
-
-require_relative './person'
+require_relative './person.rb'
 
 # create student class inheret from person class
 class Student < Person
