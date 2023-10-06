@@ -1,4 +1,6 @@
-require './person'
+# frozen_string_literal: true
+
+require_relative './person'
 
 # create student class inheret from person class
 class Student < Person

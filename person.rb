@@ -1,4 +1,6 @@
-require './Nameable'
+# frozen_string_literal: true
+
+require_relative './nameable'
 
 # create person class
 class Person < Nameable
