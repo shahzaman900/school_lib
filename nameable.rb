@@ -17,7 +17,6 @@ class Decorator < Nameable
   end
 end
 
-
 class CapitalizeDecorator < Decorator
   def initialize(nameable)
     super()
@@ -30,6 +29,7 @@ class CapitalizeDecorator < Decorator
 end
 
 class TrimmerDecorator < Decorator
+
   def correct_name
     name = super
     return name[0, 10] if name.length > 10
