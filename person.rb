@@ -21,6 +21,10 @@ class Person < Nameable
     age >= 18 || parent_permission == true
   end
 
+  def correct_name
+    name
+  end
+
   attr_reader :id
   attr_accessor :name, :age
 end

@@ -1,11 +1,9 @@
-require_relative 'nameable'
+require_relative 'decorator'
 
 # create TrimmerDecorator class
 class TrimmerDecorator < Decorator
   def correct_name
-    name = super
-    return name[0, 10] if name.length > 10
-
-    name
+    super()
+    @nameable.correct_name.length > 10 ? @nameable.correct_name[0..9] : @nameable.correct_name
   end
 end
