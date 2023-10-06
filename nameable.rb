@@ -1,21 +1,7 @@
-# frozen_string_literal: true
-
-# create Nameable class to change name
-
+# rubocop:disable Style/Documentation
 class Nameable
   def correct_name
     raise NotImplementedError, 'method should be implemented'
-  end
-end
-
-class Decorator < Nameable
-  def initialize(nameable)
-    super()
-    @nameable = nameable
-  end
-
-  def correct_name
-    @nameable.correct_name
   end
 end
 
