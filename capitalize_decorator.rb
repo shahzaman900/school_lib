@@ -2,14 +2,14 @@
 
 require_relative './nameable'
 
-# create Decorator class
-class Decorator < Nameable
+# create CapitalizeDecorator class
+class CapitalizeDecorator < Decorator
   def initialize(nameable)
     super()
     @nameable = nameable
   end
 
   def correct_name
-    @nameable.correct_name
+    @nameable.capitalize
   end
 end
