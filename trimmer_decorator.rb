@@ -1,4 +1,4 @@
-require_relative './nameable.rb'
+require_relative './nameable'
 
 # create TrimmerDecorator class
 class TrimmerDecorator < Decorator

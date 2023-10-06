@@ -1,4 +1,4 @@
-require_relative './person.rb'
+require_relative './person'
 
 # create teacher class inheret from person class
 class Teacher < Person
