@@ -24,7 +24,7 @@ class App
   end
 
   def create_person
-      puts "\nCreate a person (1) Student or (2) Teacher?"
+    puts "\nCreate a person (1) Student or (2) Teacher?"
       option = gets.chomp.to_i
 
       print 'Age:'
@@ -39,7 +39,6 @@ class App
         create_teacher(age, name)
       else
         puts 'Invalid option.'
-        return
       end
   end
 
@@ -60,11 +59,9 @@ class App
     specialization = gets.chomp
     person = Teacher.new(specialization, age, name)
     type = 'Teacher'
-
     @people.push(person)
     puts "#{type} created successfully!"
   end
-
 
   def create_book
     print 'Author:'
