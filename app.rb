@@ -28,7 +28,8 @@ class App
   def create_person
     puts '\nWould you like to create a student(1) or a teacher(2)?'
     option = gets.chomp.to_i
-    if option == 1 print 'Age:'
+    if option == 1
+      print 'Age:'
       age = gets.chomp.to_i
       print 'Name:'
       name = gets.chomp
@@ -36,8 +37,7 @@ class App
         print 'Has parent permission? [Y/N]:'
         permission = gets.chomp
       end
-      student = Student.new(age, name, parent_permission: permission)
-      @people.push(student)
+      @people.push(Student.new(age, name, parent_permission: permission))
       print 'Student created successfully!'
     elsif option == 2
       print 'Age:'
@@ -46,8 +46,7 @@ class App
       name = gets.chomp
       print 'Specialization:'
       specialization = gets.chomp
-      teacher = Teacher.new(specialization, age, name, parent_permission: permission)
-      @people.push(teacher)
+      @people.push(Teacher.new(specialization, age, name, parent_permission: permission))
       print 'Teacher created successfully!'
     else
       print 'Invalid option.'
@@ -84,12 +83,10 @@ class App
       puts 'No books added to the list'
       return
     end
-
     print 'Date (YYYY/MM/DD): '
     date = gets.chomp
     selected_person = @people[person_choice - 1]
     selected_book = @books[book_choice - 1]
-
     rental = selected_person.add_rental(date, selected_book)
     @rentals.push(rental)
     puts 'Rental created successfully!'
@@ -99,7 +96,6 @@ class App
     puts 'ID of a person:'
     id = gets.chomp.to_i
     person_rentals = @rentals.select { |rental| rental.person.id == id }
-
     if person_rentals.empty?
       puts "No rentals found for person with ID #{id}"
     else
