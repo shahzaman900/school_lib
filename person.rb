@@ -1,9 +1,13 @@
+require_relative 'nameable'
+
 # create person class
-class Person
-  def initialize(id, age, name: 'Unknown', parent_permission: true)
+class Person < Nameable
+  def initialize(id, age, name: 'Unknown', parent_permission: true, nameable: nil)
+    super()
     @id = id
     @name = name
     @age = age
+    @nameable = nameable
     @parent_permission = parent_permission
   end
 
@@ -15,6 +19,10 @@ class Person
 
   def can_use_services
     age >= 18 || parent_permission == true
+  end
+
+  def correct_name
+    name
   end
 
   attr_reader :id

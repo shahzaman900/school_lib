@@ -1,4 +1,4 @@
-require './person'
+require_relative 'person'
 
 # create student class inheret from person class
 class Student < Person
