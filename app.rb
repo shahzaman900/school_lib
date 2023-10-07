@@ -110,8 +110,7 @@ class App
       return
     end
 
-    get_date
-
+    date
     rental = @selected_person.add_rental(@date, @selected_book)
     @rentals.push(rental)
     puts 'Rental created successfully!'
@@ -135,7 +134,7 @@ class App
     @selected_book = @books[book_choice - 1]
   end
 
-  def get_date
+  def date
     print 'Date (YYYY/MM/DD): '
     @date = gets.chomp
   end
