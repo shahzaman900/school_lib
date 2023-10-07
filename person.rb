@@ -1,4 +1,5 @@
 require_relative 'nameable'
+require_relative 'rental'
 
 # create person class
 class Person < Nameable
@@ -25,6 +26,10 @@ class Person < Nameable
     name
   end
 
-  attr_reader :id
+  def add_rental(book, date)
+    Rental.new(date, book, self)
+  end
+
+  attr_reader :id, :rentals
   attr_accessor :name, :age
 end

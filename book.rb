@@ -12,6 +12,6 @@ class Book
     Rental.new(date, self, person)
   end
 
-  attr_accessor :title, auther
+  attr_accessor :title, :auther
   attr_reader :rental
 end
