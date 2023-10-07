@@ -50,7 +50,9 @@ class App
   end
 
   def prompt(*messages)
-    messages.each { |message| print message; gets.chomp }
+    messages.each { |message|
+      print message
+    gets.chomp }
   end
 
   def create_book
@@ -62,39 +64,6 @@ class App
     book = Book.new(title, author)
     @books.push(book)
   end
-
-  # def create_rental
-  #   if @people.length.positive?
-  #     puts 'Please select a person from the list below by a number (and not the id):'
-  #     @people.each_with_index do |person, index|
-  #       puts "#{index + 1}. [#{person.class.name}] Name: #{person.name} ID: #{person.id} Age: #{person.age}"
-  #     end
-  #     person_choice = gets.chomp.to_i
-
-  #   else
-  #     puts 'No people added to the list'
-  #   end
-
-  #   if @books.length.positive?
-  #     puts 'Please select the book from the list below by a number:'
-  #     @books.each_with_index do |book, index|
-  #       puts "#{index + 1}. Title: \"#{book.title}\", Author: #{book.author}"
-  #     end
-  #     book_choice = gets.chomp.to_i
-  #   else
-  #     puts 'No books added to the list'
-  #     return
-  #   end
-
-  #   print 'Date (YYYY/MM/DD): '
-  #   date = gets.chomp
-  #   selected_person = @people[person_choice - 1]
-  #   selected_book = @books[book_choice - 1]
-
-  #   rental = selected_person.add_rental(date, selected_book)
-  #   @rentals.push(rental)
-  #   puts 'Rental created successfully!'
-  # end
 
   def create_rental
     if @people.length.positive?
