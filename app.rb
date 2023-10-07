@@ -3,6 +3,7 @@ require_relative 'person'
 require_relative 'student'
 require_relative 'teacher'
 
+# create app class
 class App
   def initialize
     @people = []
@@ -23,36 +24,34 @@ class App
   end
 
   def create_person
-    puts "\nWould you like to create a student(1) or a teacher(2)?"
+    puts "\nCreate a person (1) Student or (2) Teacher?"
     option = gets.chomp.to_i
+
+    print 'Age:'
+    age = gets.chomp.to_i
+    print 'Name:'
+    name = gets.chomp
 
     case option
     when 1
-      create_student
+      if age < 18
+        print 'Has parent permission? [Y/N]:'
+        permission = gets.chomp
+      end
+      person = Student.new(age, name, parent_permission: permission)
+      type = 'Student'
     when 2
-      create_teacher
+      print 'Specialization:'
+      specialization = gets.chomp
+      person = Teacher.new(specialization, age, name)
+      type = 'Teacher'
     else
       puts 'Invalid option.'
+      return
     end
-  end
 
-  def create_student
-    age, name = prompt('Age:', 'Name:')
-    permission = age < 18 ? prompt('Has parent permission? [Y/N]:') : nil
-    @people.push(Student.new(age, name, parent_permission: permission))
-    puts 'Student created successfully!'
-  end
-
-  def create_teacher
-    age, name, specialization = prompt('Age:', 'Name:', 'Specialization:')
-    @people.push(Teacher.new(specialization, age, name, parent_permission: nil))
-    puts 'Teacher created successfully!'
-  end
-
-  def prompt(*messages)
-    messages.each { |message|
-      print message
-    gets.chomp }
+    @people.push(person)
+    puts "#{type} created successfully!"
   end
 
   def create_book
@@ -67,45 +66,35 @@ class App
 
   def create_rental
     if @people.length.positive?
-      select_person
+      puts 'Please select a person from the list below by a number (and not the id):'
+      @people.each_with_index do |person, index|
+        puts "#{index + 1}. [#{person.class.name}] Name: #{person.name} ID: #{person.id} Age: #{person.age}"
+      end
+      person_choice = gets.chomp.to_i
+
     else
       puts 'No people added to the list'
     end
 
     if @books.length.positive?
-      select_book
+      puts 'Please select the book from the list below by a number:'
+      @books.each_with_index do |book, index|
+        puts "#{index + 1}. Title: \"#{book.title}\", Author: #{book.author}"
+      end
+      book_choice = gets.chomp.to_i
     else
       puts 'No books added to the list'
       return
     end
 
-    date
-    rental = @selected_person.add_rental(@date, @selected_book)
+    print 'Date (YYYY/MM/DD): '
+    date = gets.chomp
+    selected_person = @people[person_choice - 1]
+    selected_book = @books[book_choice - 1]
+
+    rental = selected_person.add_rental(date, selected_book)
     @rentals.push(rental)
     puts 'Rental created successfully!'
-  end
-
-  def select_person
-    puts 'Please select a person from the list below by a number (and not the id):'
-    @people.each_with_index do |person, index|
-      puts "#{index + 1}. [#{person.class.name}] Name: #{person.name} ID: #{person.id} Age: #{person.age}"
-    end
-    person_choice = gets.chomp.to_i
-    @selected_person = @people[person_choice - 1]
-  end
-
-  def select_book
-    puts 'Please select the book from the list below by a number:'
-    @books.each_with_index do |book, index|
-      puts "#{index + 1}. Title: \"#{book.title}\", Author: #{book.author}"
-    end
-    book_choice = gets.chomp.to_i
-    @selected_book = @books[book_choice - 1]
-  end
-
-  def date
-    print 'Date (YYYY/MM/DD): '
-    @date = gets.chomp
   end
 
   def list_rentals
