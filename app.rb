@@ -107,7 +107,7 @@ class App
   # end
 
   def create_rental
-    if @people.length.zero?
+    if @people.empty?
       puts 'No people added to the list'
       return
     end
@@ -115,7 +115,7 @@ class App
     select_person
     return if @selected_person.nil?
 
-    if @books.length.zero?
+    if @books.empty?
       puts 'No books added to the list'
       return
     end
@@ -152,7 +152,6 @@ class App
     print 'Date (YYYY/MM/DD): '
     @date = gets.chomp
   end
-
 
   def list_rentals
     puts 'ID of a person:'
