@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative 'person'
 
 # create teacher class inheret from person class

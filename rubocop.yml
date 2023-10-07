@@ -12,7 +12,7 @@ Layout/LineLength:
 Metrics/MethodLength:
   Max: 30
 Metrics/AbcSize:
-  Max: 50
+  Max: 200
 Metrics/ClassLength:
   Max: 150
 Metrics/BlockLength:

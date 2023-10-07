@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # create classroom class
 class Classroom
   def initialize(label)
