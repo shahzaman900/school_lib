@@ -25,21 +25,21 @@ class App
 
   def create_person
     puts "\nCreate a person (1) Student or (2) Teacher?"
-      option = gets.chomp.to_i
+    option = gets.chomp.to_i
 
-      print 'Age:'
-      age = gets.chomp.to_i
-      print 'Name:'
-      name = gets.chomp
+    print 'Age:'
+    age = gets.chomp.to_i
+    print 'Name:'
+    name = gets.chomp
 
-      case option
-      when 1
-        create_student(age, name)
-      when 2
-        create_teacher(age, name)
-      else
-        puts 'Invalid option.'
-      end
+    case option
+    when 1
+      create_student(age, name)
+    when 2
+      create_teacher(age, name)
+    else
+      puts 'Invalid option.'
+    end
   end
 
   def create_student(age, name)
