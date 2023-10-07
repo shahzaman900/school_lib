@@ -73,39 +73,6 @@ class App
     @books.push(book)
   end
 
-  # def create_rental
-  #   if @people.length.positive?
-  #     puts 'Please select a person from the list below by a number (and not the id):'
-  #     @people.each_with_index do |person, index|
-  #       puts "#{index + 1}. [#{person.class.name}] Name: #{person.name} ID: #{person.id} Age: #{person.age}"
-  #     end
-  #     person_choice = gets.chomp.to_i
-
-  #   else
-  #     puts 'No people added to the list'
-  #   end
-
-  #   if @books.length.positive?
-  #     puts 'Please select the book from the list below by a number:'
-  #     @books.each_with_index do |book, index|
-  #       puts "#{index + 1}. Title: \"#{book.title}\", Author: #{book.author}"
-  #     end
-  #     book_choice = gets.chomp.to_i
-  #   else
-  #     puts 'No books added to the list'
-  #     return
-  #   end
-
-  #   print 'Date (YYYY/MM/DD): '
-  #   date = gets.chomp
-  #   selected_person = @people[person_choice - 1]
-  #   selected_book = @books[book_choice - 1]
-
-  #   rental = selected_person.add_rental(date, selected_book)
-  #   @rentals.push(rental)
-  #   puts 'Rental created successfully!'
-  # end
-
   def create_rental
     if @people.empty?
       puts 'No people added to the list'
@@ -123,7 +90,7 @@ class App
     select_book
     return if @selected_book.nil?
 
-    get_rental_date
+    rental_date
 
     rental = @selected_person.add_rental(@date, @selected_book)
     @rentals.push(rental)
@@ -148,7 +115,7 @@ class App
     @selected_book = @books[book_choice - 1]
   end
 
-  def get_rental_date
+  def rental_date
     print 'Date (YYYY/MM/DD): '
     @date = gets.chomp
   end
