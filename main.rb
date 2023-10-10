@@ -1,17 +1,19 @@
-require_relative 'app'
 require_relative 'options'
+require_relative 'app'
 
-def prompt
-  puts 'Welcome to School Lib!'
-  list = Options.new
+def main
+  puts 'Welcome to School library App'
 
+  app = App.new
+
+  list = Options.new(app)
   loop do
-    list.all_options
+    list.list_options
     option = gets.chomp.to_i
     break if option == 7
 
-    list.call_option(option)
+    list.option_handle(option)
   end
 end
 
-prompt
+main
