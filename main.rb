@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 require_relative 'options'
 require_relative 'app'
 
 def main
-  puts 'Welcome to School library App'
+  puts '---------Welcome to School library App----------'
 
   app = App.new
 

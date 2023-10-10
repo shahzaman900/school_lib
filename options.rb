@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Options
   def initialize(app)
     @app = app
