@@ -1,4 +1,5 @@
 require_relative 'app'
+require_relative 'options'
 
 def all_options
   puts "\nPlease enter a number:\n
