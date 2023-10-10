@@ -27,9 +27,7 @@ class Options
       6 => -> { @app.list_rentals },
       7 => -> { exit }
     }
-
     action = options[option]
-
     if action
       action.call
     else
