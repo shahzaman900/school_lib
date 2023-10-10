@@ -4,6 +4,7 @@ require_relative 'student'
 require_relative 'teacher'
 require_relative 'classroom'
 
+# create app class
 class App
   attr_accessor :rentals, :books, :people
 

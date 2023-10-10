@@ -1,7 +1,6 @@
-# frozen_string_literal: true
-
 require './nameable'
 
+# create person class
 class Person < Nameable
   attr_accessor :name, :age
   attr_reader :id, :rentals

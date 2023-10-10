@@ -1,7 +1,6 @@
-# frozen_string_literal: true
-
 require './person'
 
+# create student class
 class Student < Person
   attr_reader :classroom
 

@@ -1,5 +1,4 @@
-# frozen_string_literal: true
-
+# create rental class
 class Rental
   attr_accessor :date, :book, :person
 
