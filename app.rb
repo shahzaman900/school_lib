@@ -48,15 +48,14 @@ class App
 
     rentals = @rentals.filter { |rental| rental['person']['id'] == id }
 
-      if rentals.empty?
-        puts 'Has no rentals'
-      else
-        first_rental = rentals.first
-        puts "Books rented by #{first_rental['person']['name']} are :"
-        rentals.each do |rental|
-          puts "Date: #{rental['date']}, Book: #{rental['book']['title']} by #{rental['book']['author']}"
-        end
+    if rentals.empty?
+      puts 'Has no rentals'
+    else
+      first_rental = rentals.first
+      puts "Books rented by #{first_rental['person']['name']} are :"
+      rentals.each do |rental|
+        puts "Date: #{rental['date']}, Book: #{rental['book']['title']} by #{rental['book']['author']}"
       end
     end
-
+  end
 end
