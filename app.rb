@@ -29,16 +29,18 @@ class App
   end
 
   def list_people
+    @people = load_data('./data/people.json')
     if @people.empty?
       puts 'No People'
     else
       @people.each_with_index do |person, i|
-        puts "No: #{i + 1}, Name: #{person.name},age: #{person.age} ID: #{person.id}"
+        puts "No: #{i + 1}, Name: #{person['name']},age: #{person['age']} ID: #{person['id']}"
       end
     end
   end
 
   def list_rentals
+    @rentals = load_data('./data/rentals.json')
     puts "\n"
     list_people
     puts 'Enter person id:'
@@ -51,7 +53,7 @@ class App
         puts 'Has no rentals'
       else
         person.rentals.each do |rental|
-          puts "Date: #{rental.date}, Book: #{rental.book.title} by #{rental.book.author}"
+          puts "Date: #{rental['data']}, Book: #{rental['book']['title']} by #{rental['book']['author']}"
         end
       end
     end

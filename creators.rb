@@ -7,6 +7,7 @@ require './data/preservedata'
 
 module Creators
   def create_person
+    @people = load_data('./data/people.json')
     puts "\n"
     puts 'Do you want to create a student (1) or teacher (2)?:'
     type = gets.chomp.to_i
@@ -30,16 +31,19 @@ module Creators
   def create_student(age, name, parent_permission)
     student = Student.new(age, name: name, parent_permission: parent_permission)
     @people << student
+    save_data(@people, './data/people.json')
     puts '------------Student created succesfully----------'
   end
 
   def create_teacher(age, name, specialization)
     teacher = Teacher.new(age, specialization, name: name)
     @people << teacher
+    save_data(@people, './data/people.json')
     puts '-----------Teacher created succesfully----------'
   end
 
   def create_book
+    @books = load_data('./data/books.json')
     puts "\n"
     puts 'Enter book title:'
     title = gets.chomp
@@ -47,11 +51,12 @@ module Creators
     author = gets.chomp
     book = Book.new(title, author)
     @books << book
-    save_data(@books,'./data/books.json')
+    save_data(@books, './data/books.json')
     puts '-------Book added succesfully--------'
   end
 
   def create_rental
+    @rentals = load_data('./data/rentals.json')
     puts "\n"
     puts 'Enter rental date:'
     date = gets.chomp
@@ -63,5 +68,6 @@ module Creators
     person = gets.chomp.to_i
     rental = Rental.new(date, books[book - 1], people[person - 1])
     @rentals << rental
+    save_data(@rentals, './data/rentals.json')
   end
 end
