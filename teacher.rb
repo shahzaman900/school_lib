@@ -1,9 +1,9 @@
-require_relative 'person'
+require './person'
 
-# create teacher class inheret from person class
+# create teacher class
 class Teacher < Person
-  def initialize(id, specialization, age, name = 'Unknown', parent_permission: true)
-    super(id, age, name, parent_permission)
+  def initialize(age, specialization, name: 'Unknown')
+    super(age, name: name)
     @specialization = specialization
   end
 
