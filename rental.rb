@@ -6,10 +6,10 @@ class Rental
     @date = date
 
     @book = book
-    book.rentals << self
+    book['rentals'] << self
 
     @person = person
-    person.rentals << self
+    person['rentals'] << self
   end
 
   def to_h

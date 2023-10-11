@@ -66,7 +66,7 @@ module Creators
     list_people
     puts 'Enter person number:'
     person = gets.chomp.to_i
-    rental = Rental.new(date, books[book - 1], people[person - 1])
+    rental = Rental.new(date, @books[book - 1], @people[person - 1])
     @rentals << rental
     save_data(@rentals, './data/rentals.json')
   end

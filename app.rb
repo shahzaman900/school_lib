@@ -23,7 +23,7 @@ class App
       puts 'No Books'
     else
       @books.each_with_index do |book, i|
-        puts "Number: #{i + 1}, Title: #{book[:title]}, Author: #{book[:author]}"
+        puts "Number: #{i + 1}, Title: #{book['title']}, Author: #{book['author']}"
       end
     end
   end
@@ -45,17 +45,18 @@ class App
     list_people
     puts 'Enter person id:'
     id = gets.chomp.to_i
-    @people.each do |person|
-      next unless person.id == id
 
-      puts "Name: #{person.name}"
-      if person.rentals.empty?
+    rentals = @rentals.filter { |rental| rental['person']['id'] == id }
+
+      if rentals.empty?
         puts 'Has no rentals'
       else
-        person.rentals.each do |rental|
-          puts "Date: #{rental['data']}, Book: #{rental['book']['title']} by #{rental['book']['author']}"
+        first_rental = rentals.first
+        puts "Books rented by #{first_rental['person']['name']} are :"
+        rentals.each do |rental|
+          puts "Date: #{rental['date']}, Book: #{rental['book']['title']} by #{rental['book']['author']}"
         end
       end
     end
-  end
+
 end
