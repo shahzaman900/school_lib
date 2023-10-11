@@ -77,6 +77,12 @@ Before running this project, make sure you have the following prerequisites inst
 
 GitHub: @sheezu900<br>
 
+👤 **Anshuman Singh Negi **
+
+- GitHub: [@githubhandle](https://github.com/anshuman7negi)
+- Twitter: [@twitterhandle](https://twitter.com/AnshumanNegi108)
+- LinkedIn: [@LinkedIn](https://www.linkedin.com/in/anshuman-singh-negi-33779a224/)
+
 ## 🔭 Future Features <a name="future-features"></a>
 
 <details>
