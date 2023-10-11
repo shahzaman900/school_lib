@@ -3,6 +3,7 @@ require_relative 'rental'
 require_relative 'student'
 require_relative 'teacher'
 require_relative 'classroom'
+require './data/preservedata'
 
 module Creators
   def create_person
@@ -46,6 +47,7 @@ module Creators
     author = gets.chomp
     book = Book.new(title, author)
     @books << book
+    save_data(@books,'./data/books.json')
     puts '-------Book added succesfully--------'
   end
 

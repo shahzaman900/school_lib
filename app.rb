@@ -3,6 +3,7 @@ require_relative 'rental'
 require_relative 'student'
 require_relative 'teacher'
 require_relative 'classroom'
+require './data/preservedata '
 require './creators'
 
 # create app class
@@ -17,11 +18,12 @@ class App
   end
 
   def list_books
+    @books = load_data('./data/books.json')
     if @books.empty?
       puts 'No Books'
     else
       @books.each_with_index do |book, i|
-        puts "Number: #{i + 1}, Title: #{book.title}, Author: #{book.author}"
+        puts "Number: #{i + 1}, Title: #{book[:title]}, Author: #{book[:author]}"
       end
     end
   end
