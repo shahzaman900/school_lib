@@ -1,4 +1,6 @@
 require './person'
+require './book'
+book = Book.new('Harry Potter', 'J.K. Rowling')
 
 describe Person do
   person = Person.new(20, name: 'Mark')
@@ -14,6 +16,10 @@ describe Person do
 
     it 'should return correct data' do
       expect(person.can_use_services?).to eq true
+    end
+    it 'can rent a book' do
+      rental = person.rent_book(book, '12/02/2023')
+      expect(person.rentals).to include(rental)
     end
   end
 end
