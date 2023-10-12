@@ -5,7 +5,7 @@ require './person'
 describe Rental do
   book = Book.new('Harry Potter', 'J.K. Rowling')
   date = '12/02/2023'
-  person = Person.new(20, name:'Jimmy')
+  person = Person.new(20, name: 'Jimmy')
   rental = Rental.new(date, book, person)
 
   context 'should create instance of rental class for student' do

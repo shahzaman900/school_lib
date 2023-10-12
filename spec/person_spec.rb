@@ -1,7 +1,7 @@
 require './person'
 
 describe Person do
-  person = Person.new(20, name:'Mark')
+  person = Person.new(20, name: 'Mark')
 
   context 'should create instance of Person Class' do
     it 'returns correct name' do
